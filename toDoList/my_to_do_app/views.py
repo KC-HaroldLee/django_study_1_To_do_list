@@ -18,3 +18,10 @@ def createTodo(request):
     new_todo.save() # 데이터 베이스에 알아서 저장해준다.
     # return HttpResponse('입력한 문장은 :'+ input_todoContent)
     return HttpResponseRedirect(reverse('index'))
+
+def doneTodo(request):
+    done_todo_id = request.GET['todoNum']
+    print('완료한 todo! =>', done_todo_id)
+    target_todo = Todo.objects.get(id = done_todo_id)
+    target_todo.delete()
+    return HttpResponseRedirect(reverse('index'))

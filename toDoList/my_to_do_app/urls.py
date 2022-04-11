@@ -5,5 +5,6 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'), # name은 별칭
-    path('createTodo/', views.createTodo, name='createTodo') # 앞에 '/' 없음 
+    path('createTodo/', views.createTodo, name='createTodo'), # 앞에 '/' 없음 
+    path('deleteTodo/', views.doneTodo, name='deleteTodo') # 앞에 '/' 없음 
 ]
